@@ -4,17 +4,23 @@
     text-align: center;
 }
 
+.pets-post {
+    border: 2px solid grey;
+    max-width: 400px;
+    display: inline-block;
+    margin: 20px;
+}
+
 .pets-img {
     max-width: 400px;
-    max-height: 400px;
+    max-height: 300px;
 }
 
 .pets-clicks {
     font-weight: bolder;
     color: red;
     border: 2px solid red;
-    width: 20px;
-    height: 20px;
-    border-radius: 100%;
+    width: 40px;
+    height: 18px;
     margin: 10px auto;
 }

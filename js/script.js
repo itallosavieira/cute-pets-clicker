@@ -1,20 +1,50 @@
-let imgPets = document.querySelectorAll(".pets-img");
-let clickPets = document.querySelectorAll(".pets-clicks");
+let pets = [
+    {
+        name: "Dog",
+        click: 0
+    },
+    {
+        name: "Cat",
+        click: 0
+    },
+    {
+        name: "Pig",
+        click: 0
+    },
+    {
+        name: "Bird",
+        click: 0
+    },
+    {
+        name: "Fish",
+        click: 0
+    }
+]
 
-let counterClicks1 = 1;
-let counterClicks2 = 1;
+for (let pet of pets) {
+    const openPost = function() {
+        document.body.appendChild(postPet);
+        postPet.appendChild(imgPet);
+        postPet.appendChild(clickPet);
+    }
+    const countClick = function() {
+        pet.click = pet.click + 1;
+        clickPet.textContent = pet.click;
+    }
 
-const getClick1 = function() {
-    clickPets[0].innerHTML = `${counterClicks1}`;
-    counterClicks1 += 1;
-};
+    const listPets = document.createElement("li");
+    listPets.textContent = pet.name;
 
-const getClick2 = function() {
-    clickPets[1].innerHTML = `${counterClicks2}`;
-    counterClicks2 += 1; 
-};
+    const postPet = document.createElement("div");
+    const imgPet = document.createElement("img");
+    imgPet.src = `img/${pet.name}.jpg`;
 
-imgPets[0].addEventListener('click', getClick1);
-imgPets[1].addEventListener('click', getClick2);
+    const clickPet = document.createElement("p");
+    clickPet.textContent = pet.click;
 
+    document.body.appendChild(listPets);
 
+    listPets.addEventListener('click', openPost);
+    imgPet.addEventListener('click', countClick)
+}
+    
